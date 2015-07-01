@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS `survey` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `color` varchar(4) DEFAULT NULL,
+  `sport` varchar(6) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
+
+CREATE VIEW `v_totals` AS select (select count(`survey`.`color`) AS `Expr1` from `survey` where (`survey`.`color` = 'pink')) AS `Pink`,(select count(`survey_2`.`color`) AS `Expr2` from `survey` `survey_2` where (`survey_2`.`color` = 'blue')) AS `Blue`,(select count(`survey_2`.`sport`) AS `Expr3` from `survey` `survey_2` where (`survey_2`.`sport` = 'futbol')) AS `Futbol`,(select count(`survey_2`.`sport`) AS `Expr3` from `survey` `survey_2` where (`survey_2`.`sport` = 'soccer')) AS `Soccer`,(select count(`survey_2`.`id`) AS `Expr4` from `survey` `survey_2`) AS `Total` from `survey` limit 0,1;

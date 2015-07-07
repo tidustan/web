@@ -221,12 +221,12 @@
     });
 
 // when .modal-wide opened, set content-body height based on browser height; 200 is appx height of modal padding, modal title and button bar
-
+/*
 $(".modal-wide").on("show.bs.modal", function() {
   var height = $(window).height() - 200;
   $(this).find(".modal-body").css("max-height", height);
 });
-
+*/
 
   </script>
 
@@ -251,6 +251,50 @@ span.dropt:hover span {
   z-index:6;
 }
 
+</style>
+
+<style type="text/css">
+.toggle-box {
+  display: none;
+}
+
+.toggle-box + label {
+  cursor: pointer;
+  display: block;
+  font-weight: bold;
+  line-height: 21px;
+  margin-bottom: 5px;
+}
+
+.toggle-box + label + div {
+  display: none;
+  margin-bottom: 10px;
+}
+
+.toggle-box:checked + label + div {
+  display: block;
+}
+
+.toggle-box + label:before {
+  background-color: #4F5150;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  color: #FFFFFF;
+  content: "+";
+  display: block;
+  float: left;
+  font-weight: bold;
+  height: 20px;
+  line-height: 20px;
+  margin-right: 5px;
+  text-align: center;
+  width: 20px;
+}
+
+.toggle-box:checked + label:before {
+  content: "\2212";
+}
 </style>
 
 </head>
@@ -279,6 +323,23 @@ span.dropt:hover span {
       <area shape="rect" coords="893,245,895,247" alt="Image Map" style="outline:none;" title="Image Map" href="#" />
       <!-- not need save to remove -->
     </map>
+
+<input class="toggle-box" id="header1" type="checkbox" >
+<label for="header1">Click here to read more!</label>
+<div>Lorem ipsum dolor sit amet, consectetuer adipiscing.</div>
+
+<input class="toggle-box" id="header2" type="checkbox" >
+<label for="header2">Click here to read more!</label>
+<div>Lorem ipsum dolor sit amet, consectetuer adipiscing.</div>
+
+<input class="toggle-box" id="header3" type="checkbox" >
+<label for="header3">Click here to read more!</label>
+<div>Lorem ipsum dolor sit amet, consectetuer adipiscing.</div>
+
+<input class="toggle-box" id="header4" type="checkbox" >
+<label for="header4">Click here to read more!</label>
+<div>Lorem ipsum dolor sit amet, consectetuer adipiscing.</div>
+
   </div>
 
 <h1>HOLLA BACK YO!</h1>
@@ -288,6 +349,8 @@ span.dropt:hover span {
     <label class="btn" for="modal-1">Show me modal with a cat</label>
     <label class="btn btn--blue" for="modal-2">Click for more AWW</label>
   </p>
+
+
 </div>
 
 
@@ -354,6 +417,9 @@ span.dropt:hover span {
       Currently using <b>36% of your storage space</b>.
     </p>
   </div>
+
+
+
 
 </body>
 </html>

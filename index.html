@@ -194,8 +194,7 @@
 
   </style>
 
-  <script src="js/external/jquery/jquery.js"></script>
-  <script src="js/jquery-ui.js"></script>
+  <script src="js/jquery-1.4.4.min.js"></script>
 
   <script>
 
@@ -233,8 +232,26 @@ $(".modal-wide").on("show.bs.modal", function() {
 
 
 
+<style type="text/css">
+/*span.dropt {border-bottom: thin dotted; background: #ffeedd;}
+span.dropt:hover {text-decoration: none; border: thin dotted; background: #ffffff; z-index: 6;}
+*/
 
+span.dropt span {
+  position: absolute;
+  display: none;
+  margin: 4px 0 0 0px; padding: 3px 3px 3px 3px;
+  border-style:solid; border-color:black;
+  border-width:1px; display: none
+}
+span.dropt:hover span {
+  right: 2%;
+  background: #ffffff;
+  display: block;
+  z-index:6;
+}
 
+</style>
 
 </head>
 
@@ -242,6 +259,13 @@ $(".modal-wide").on("show.bs.modal", function() {
 
   <div id="web-header">
     <h1>header</h1>
+    <span class="dropt" title="Title for the pop-up" align="right">
+      <img src="img/help_icon.png" height="50px" width="50px"/>
+      <span><img src="img/missing.jpg"/><br/>
+        Caption
+      </span>
+    </span>
+    
   </div>
 
   <div id="web-content">
